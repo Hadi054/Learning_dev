@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        const div = document.querySelector('div')
+        const divLabel = div.querySelector('label')
+        const divInput = div.querySelector('input')
+        const divButton = div.querySelector('button')
+
+        divInput.addEventListener('focus',()=>{
+            divInput.style.outline = 'none';
+            divInput.style.border ="2px solid blue"
+        })
+        divButton.style.backgroundColor = 'white';
+        divButton.style.paddingLeft = "15px";
+        divButton.style.paddingRight= "15px";
+        divButton.style.paddingTop= "2px";
+        divButton.style.paddingBottom= "2px";
+        divButton.style.border ="2px solid #D3D3D3"
+        const list = document.querySelector('ul')
+        const array=["Eggs","Milk","Bread","Humous"]
+        for(let i=0;i<4;i++)
+            {
+                const li = document.createElement('li')
+                li.textContent=array[i]
+                const button = document.createElement('button')
+                button.textContent = "Delete"
+                button.style.color="black"
+                button.style.fontWeight="600"
+                button.style.fontSize="13px"
+                button.style.backgroundColor="white"
+                button.style.border = "none"
+                button.style.boxShadow = "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)"
+                button.style.paddingLeft = "15px";
+                button.style.paddingRight= "15px";
+                button.style.paddingTop= "8px";
+                button.style.paddingBottom= "8px";
+                li.appendChild(button)
+                list.appendChild(li)
+            }
+        
+    </script>
+  </body>
+</html>
